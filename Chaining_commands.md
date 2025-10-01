@@ -6,8 +6,8 @@ But THIS challenge (and only this challenge) does have a root password. That pas
 
 ### Solve
 **Flag:** `pwn.college{4oKSea2pMgLzPoyA5WA6ltRXsTk.QX1UDO0wiMxITNxEzW}`
-a
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+
+Just chained the two outputs with ;
 
 ```bash
 hacker@chaining~chaining-with-semicolons:~$ /challenge/pwn ; /challenge/college
@@ -16,10 +16,7 @@ pwn.college{4oKSea2pMgLzPoyA5WA6ltRXsTk.QX1UDO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
-
-### References 
-Add any references or videos you used while solving the challenge.
+chaining with ;
 
 ## 2. Building on success
 In this challenge, you need to chain the programs /challenge/first-success and /challenge/second using the && operator. Try running each command separately first to see what happens (which is that you will not get the flag). But if you chain them with &&, the flag will appear!
@@ -27,7 +24,7 @@ In this challenge, you need to chain the programs /challenge/first-success and /
 ### Solve
 **Flag:** `pwn.college{YITq1zn7dkz-SJUcDJ7-RQ4tIQb.0lM0MDOxwiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+Used && to indicate both the processes should run which gave me the flag (running this && (and) that)
 
 ```bash
 hacker@chaining~building-on-success:~$ /challenge/first-success && /challenge/second
@@ -37,16 +34,13 @@ Nice chaining! Flag: pwn.college{YITq1zn7dkz-SJUcDJ7-RQ4tIQb.0lM0MDOxwiMxITNxEzW
 ### New Learnings
 && is the and operator.
 
-### References 
-Add any references or videos you used while solving the challenge.
-
 ## 3. Handling Failure
 In this challenge, you need to chain /challenge/first-failure and /challenge/second using the || operator. Go for it!
 
 ### Solve
 **Flag:** ` pwn.college{09xKpZD5KmI55iObWFejUmVO0Gj.01M0MDOxwiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+Typed || meaning either one of the should work. as seen in the bash first is failure but second worked so it worked and gave the flag
 
 ```bash
 hacker@chaining~handling-failure:~$ /challenge/first-failure || /challenge/second
@@ -55,12 +49,7 @@ Nice chaining! Flag: pwn.college{09xKpZD5KmI55iObWFejUmVO0Gj.01M0MDOxwiMxITNxEzW
 ```
 
 ### New Learnings
-|| is the if operator.
-
-### References 
-Add any references or videos you used while solving the challenge.
-
-- your first shell script
+|| is the OR operator.
 
 ## 4. Redirecting Script Output
 In this level, we will practice piping (|) from your script to another program. Like before, you need to create a script that calls the /challenge/pwn command followed by the /challenge/college command, and pipe the output of the script into a single invocation of the /challenge/solve command!
@@ -68,7 +57,7 @@ In this level, we will practice piping (|) from your script to another program. 
 ### Solve
 **Flag:** `pwn.college{ERjBfxoNQ17WezHssYxdywcrsEq.QX4ETO0wiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+Created the script using nano script.sh. and then Piping the script contents into solve using | operator.
 
 ```bash 
 hacker@chaining~redirecting-script-output:~$ nano script.sh
@@ -89,7 +78,7 @@ Make a shellscript that will invoke /challenge/solve, make it executable, and ru
 ### Solve
 **Flag:** `pwn.college{YcLVWUycmEKNeYj3_GX6qlvVU8k.QX0cjM1wiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+I typed chmod(change mode) +x(executable) to make the file execuatable
 
 ```bash
 hacker@chaining~executable-shell-scripts:~$ touch minor.sh
@@ -101,7 +90,7 @@ pwn.college{YcLVWUycmEKNeYj3_GX6qlvVU8k.QX0cjM1wiMxITNxEzW}
 ```
 
 ### New Learnings
-nano command
+chomod +x command to exeecute file
 
 ### References 
 Add any references or videos you used while solving the challenge.
@@ -109,12 +98,9 @@ Add any references or videos you used while solving the challenge.
 ## 6. Understanding Shebangs
 create a script at /home/hacker/solve.sh that has a proper shebang and outputs "hack the planet". Remember to make it executable, then run /challenge/run to verify your script works correctly!
 
-
-
 ### Solve
 **Flag:** `pwn.college{YcLVWUycmEKNeYj3_GX6qlvVU8k.QX0cjM1wiMxITNxEzW}`
-
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+using shebang scripting your shell script. chmod to give a+x ( all can execute) to make the file executable
 
 ```bash
 hacker@chaining~understanding-shebangs:~$ touch solve.sh
@@ -128,7 +114,7 @@ Flag: pwn.college{UGLXaUEuGFC4K6QMez7g3r_kAyG.0VOzMDOxwiMxITNxEzW}
 ```
 
 ### New Learnings
-nano command
+Shebangs #!bin/bash, understanding how to put commands into shell script and run it as bash
 
 ### References 
 [Add any references or videos you used while solving the challenge.](https://www.youtube.com/watch?v=LTuuMtQR1uQ&t=187s)
@@ -139,7 +125,7 @@ create a script at /home/hacker/solve.sh that has a proper shebang and outputs "
 ### Solve
 **Flag:** `pwn.college{Ue4toLW_okWD9c9RmTayYnIuYok.0VNzMDOxwiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+$1 represents argument one and similarly $2 represents second one. Just had to switch them. 
 
 ```bash
 hacker@chaining~scripting-with-arguments:~$ nano solve.sh
@@ -155,7 +141,7 @@ pwn.college{Ue4toLW_okWD9c9RmTayYnIuYok.0VNzMDOxwiMxITNxEzW}
 ```
 
 ### New Learnings
-nano command
+Arguments
 
 ### References 
 [Add any references or videos you used while solving the challenge.](https://www.youtube.com/watch?v=LTuuMtQR1uQ&t=187s)
@@ -170,7 +156,7 @@ Once your script works correctly, run /challenge/run to get your flag!
 ### Solve
 **Flag:** `pwn.college{EP0JoBcAftc2JL8Tk8vDJo9OPB2.0lNzMDOxwiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+used the if command that was typed ine examples to learn the basics of how to do it.
 
 ```bash
 hacker@chaining~scripting-with-conditionals:~$ nano solve.sh
@@ -178,8 +164,9 @@ solve.sh --
 #!/bin/sh
 
 
-if [ "$1" = "pwn" ]; then
-  printf '%s\n' "college"
+if [ "$1" = "pwn" ]
+then
+  echo "college"
 fi
 
 hacker@chaining~scripting-with-conditionals:~$ bash /home/hacker/solve.sh pwn
@@ -191,10 +178,7 @@ pwn.college{EP0JoBcAftc2JL8Tk8vDJo9OPB2.0lNzMDOxwiMxITNxEzW}
 ```
 
 ### New Learnings
-nano command
-
-### References 
-Add any references or videos you used while solving the challenge.
+if and fi
 
 ## 9. Scripting with deafault cases
 For this challenge, write a script at /home/hacker/solve.sh that:
@@ -205,7 +189,7 @@ For this challenge, write a script at /home/hacker/solve.sh that:
 ### Solve
 **Flag:** `pwn.college{gdX_XPZQns02mZzC6sOjec6971m.01NzMDOxwiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+same thing just with an else condition
 
 ```bash
 hacker@chaining~scripting-with-default-cases:~$ nano solve.sh
@@ -229,7 +213,7 @@ pwn.college{gdX_XPZQns02mZzC6sOjec6971m.01NzMDOxwiMxITNxEzW}
 ```
 
 ### New Learnings
-nano command
+if else.
 
 ### References 
 Add any references or videos you used while solving the challenge.
@@ -246,7 +230,7 @@ For this challenge, write a script at /home/hacker/solve.sh that:
 ### Solve
 **Flag:** `pwn.college{QcyLuLu8PaYxntr9rLzUh8sfWsl.0FOzMDOxwiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+Elfif condition nnow introduced the command seemed the same to me.
 
 ```bash
 hacker@chaining~scripting-with-multiple-conditions:~$ nano solve.sh
@@ -273,7 +257,7 @@ pwn.college{QcyLuLu8PaYxntr9rLzUh8sfWsl.0FOzMDOxwiMxITNxEzW}
 ```
 
 ### New Learnings
-nano command
+elif nesting 
 
 ### References 
 Add any references or videos you used while solving the challenge.
@@ -284,7 +268,7 @@ Make a shellscript that will invoke /challenge/solve, make it executable, and ru
 ### Solve
 **Flag:** `pwn.college{YcLVWUycmEKNeYj3_GX6qlvVU8k.QX0cjM1wiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+Make minor shell script and invoked it without bash by giving the permission of +x to that file.
 
 ```bash
 hacker@chaining~executable-shell-scripts:~$ touch minor.sh
@@ -296,10 +280,7 @@ pwn.college{YcLVWUycmEKNeYj3_GX6qlvVU8k.QX0cjM1wiMxITNxEzW}
 ```
 
 ### New Learnings
-nano command
-
-### References 
-Add any references or videos you used while solving the challenge.
+executable shell script without bash
 
 
 ## 12. Reading Shell Scripts
@@ -308,8 +289,7 @@ Make a shellscript that will invoke /challenge/solve, make it executable, and ru
 ### Solve
 **Flag:** `pwn.college{84YyjiYRc6H9EcgETksHk3LNO8D.0lMwgDOxwiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
-
+made the shell script readable and hence cat the flag.
 ```bash
 hacker@chaining~reading-shell-scripts:~$ cat /challenge/run
 #!/opt/pwn.college/bash
@@ -333,8 +313,4 @@ pwn.college{84YyjiYRc6H9EcgETksHk3LNO8D.0lMwgDOxwiMxITNxEzW}
 ```
 
 ### New Learnings
-nano command
-
-### References 
-Add any references or videos you used while solving the challenge.
-
+reading by cat
