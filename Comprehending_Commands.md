@@ -6,7 +6,7 @@ Add challenge description here
 ### Solve
 **Flag:** `pwn.college{gDGxkx7F8LA17byx689k1wB2PUV.QXxcTN0wiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+cat the file to read the contents of the file (which contained flag)
 
 ```bash
 hacker@commands~cat-not-the-pet-but-the-command:~$ cat flag
@@ -14,10 +14,7 @@ pwn.college{gDGxkx7F8LA17byx689k1wB2PUV.QXxcTN0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
-
-### References 
-Add any references or videos you used while solving the challenge.
+cat command
 
 ## 2. Catting absolute paths
 In this directory, I will not copy it to your home directory, but I will make it readable. You can read it with cat at its absolute path: /flag.
@@ -25,7 +22,7 @@ In this directory, I will not copy it to your home directory, but I will make it
 ### Solve
 **Flag:** `pwn.college{8itbt8hLROIDCYL52xWUsClgJLR.QX5ETO0wiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+cat command to an absolute path /flag
 
 ```bash
 hacker@commands~catting-absolute-paths:~$ cat /flag
@@ -33,7 +30,7 @@ pwn.college{8itbt8hLROIDCYL52xWUsClgJLR.QX5ETO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+catting absolute path
 
 
 ## 3. More catting practice
@@ -42,7 +39,7 @@ You can specify all sorts of paths as arguments to commands, and we'll practice 
 ### Solve
 **Flag:** `pwn.college{EmRtBUgZyrKhfztO0Wz1mzKTf2K.QXwITO0wiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+without using cd I cat through the flag wherever it was stored.
 
 ```bash
 You cannot use the 'cd' command in this level, and must retrieve the flag by 
@@ -54,7 +51,7 @@ pwn.college{EmRtBUgZyrKhfztO0Wz1mzKTf2K.QXwITO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+catting asbolute paths.
 
 ## 4. Grepping for a needle in a haystack
 In this challenge, I've put a hundred thousand lines of text into the /challenge/data.txt file. grep it for the flag!
@@ -70,14 +67,15 @@ pwn.college{YFU51wBOx-31f3Dc2lvEpsRFlZz.QX3EDO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+Grepping command
 
 ## 5. Comparing files
 Now for your challenge! There are two files in /challenge:
 
 /challenge/decoys_only.txt contains 100 fake flags
 /challenge/decoys_and_real.txt contains all 100 fake flags plus the one real flag
-Use diff to find what's different between these files and get your flag!
+Use diff to find what's different between these files and get your flag! 
+using diff i compared these and got the flag
 
 ### Solve
 **Flag:** `pwn.college{YRYYCSOZWZcTrxfEFKGH2Y1PvkL.01MwMDOxwiMxITNxEzW}`
@@ -94,7 +92,7 @@ hacker@commands~comparing-files:~$ diff /challenge/decoys_only.txt /challenge/de
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+compared two files using diff
 
 ## 6. listing files
 In this challenge, we've named /challenge/run with some random name! List the files in /challenge to find it.
@@ -117,7 +115,7 @@ pwn.college{cHnf4pz_tdwb4oiJDgY5HVLAnBR.QX4IDO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+listing fiels
 
 ## 7. Touching files 
 It's that simple! In this level, please create two files: /tmp/pwn and /tmp/college, and run /challenge/run to get your flag!
@@ -142,7 +140,7 @@ pwn.college{8zwQB5DDoOpBqc6qV03WhdDlQHB.QXwMDO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+creating fiels using touch command
 
 ## 8. removing files
 This challenge will create a delete_me file in your home directory! Delete it, then run /challenge/check, which will make sure you've deleted it and then give you the flag!
@@ -160,7 +158,7 @@ pwn.college{kbXIomkDzw7jcYwN6LzHteA3mg9.QX2kDM1wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+removing files using rm
 
 ## 9. moving files
 This challenge wants you to move the /flag file into /tmp/hack-the-planet (do it)! When you're done, run /challenge/check, which will check things out and give the flag to you.
@@ -179,7 +177,7 @@ pwn.college{0ixzi6C4twDgKlSlU6aTLW6B1-F.0VOxEzNxwiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+moving files using mv
 
 ## 10. hidden files
 Now, it's your turn! Go find the flag, hidden as a dot-prepended file in /.
@@ -201,7 +199,7 @@ pwn.college{QR50Pa8hB9tjl2yHWrqegAz4Gzr.QXwUDO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+accesing hidden file (.flag) using ls -a
 
 ## 11. An Epic Filesystem Quest
 In this challenge, I have hidden the flag! Here, you will use ls and cat to follow my breadcrumbs and find it! Here's how it'll work:
@@ -319,7 +317,7 @@ pwn.college{sh8yTDEJQR85OmldHFjfytNXlKH.QXxMDO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+Combining all my knowledge
 
 ## 13. finding files
 First, there are other files named flag on the filesystem. Don't panic if the first one you try doesn't have the actual flag in it. Second, there're plenty of places in the filesystem that are not accessible to a normal user. These will cause find to generate errors, but you can ignore those; we won't hide the flag there! Finally, find can take a while; be patient!
@@ -344,7 +342,7 @@ pwn.college{0gg7DUkND5PfkiYs6nWu64Wb94o.QXyMDO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+Find command using it to find files
 
 ## 14. linking files 
 In this level the flag is, as always, in /flag, but /challenge/catflag will instead read out /home/hacker/not-the-flag. Use the symlink, and fool it into giving you the flag!
@@ -361,4 +359,4 @@ pwn.college{oEvfxyMkpXdyn6Hq47Ao1sUWIzv.QX5ETN1wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+Using a softlink or a symlink 
