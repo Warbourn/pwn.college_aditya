@@ -10,7 +10,7 @@ Given that knowledge, go get the flag!
 ### Solve
 **Flag:** `pwn.college{helloworld}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+gave the challenge file the argument and it gave flag
 
 ```bash
 /challenge/challenge --giveflag
@@ -19,7 +19,7 @@ pwn.college{0IkuAz1gm2z-EErXFkqaLOMEue4.QX0ITO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+arguments
 
 ## 2. Learning complex usage
 The program for this challenge is /challenge/challenge, and you'll need to invoke it properly in order for it to give you the flag. Let's pretend that this is its documentation:
@@ -31,7 +31,7 @@ Given that knowledge, go get the flag!
 ### Solve
 **Flag:** `pwn.college{gLes1tGXEdGG16HZatY2ScH-MNT.QX1ITO0wiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+gave the argument to challenge and then printed the flag using knowledge in --getflag
 
 ```bash
 hacker@man~learning-complex-usage:~$ /challenge/challenge --printfile /flag
@@ -40,7 +40,7 @@ pwn.college{gLes1tGXEdGG16HZatY2ScH-MNT.QX1ITO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+Arguments
 
 ## 3. Reading Manuals
 The challenge in this level has a secret option that, when you use it, will cause the challenge to print the flag. You must learn this option through the man page for challenge!
@@ -82,18 +82,21 @@ Searching Manuals. / to search, n to next, ? to search backwards
 The challenge in this level has a secret option that, when you use it, will cause the challenge to print the flag. You must learn this option through the man page for challenge!
 
 ### Solve
-**Flag:** `pwn.college{gI22YP7qualuQqiYUqoOGApUYHd.QX0EDO0wiMxITNxEzW}`
+**Flag:** `pwn.college{stXU4oHLNjnebwvvreR8yrqUQsy.QX2EDO0wiMxITNxEzW}`
 
-The first comman dI had to run was the man challenge. in the synopsis it said -gqualu NUM and written below it was if num is correct print flag. Num is 227.
+Searched throught the manual using man -k command that i found inside the manual of man itself. The man -k command helped me locate the challenge where the prints flag was. rest was written inside file how to print flag
 
 ```bash
-hacker@man~reading-manuals:~$ man challenge
-hacker@man~reading-manuals:~$ /challenge/challenge --gqualu 227
-Correct usage! Your flag: pwn.college{gI22YP7qualuQqiYUqoOGApUYHd.QX0EDO0wiMxITNxEzW}
+hacker@man~searching-for-manuals:~$ man man
+hacker@man~searching-for-manuals:~$ man -k challenge
+stojnebwvv (1)       - print the flag!
+hacker@man~searching-for-manuals:~$ man stojnebwvv
+hacker@man~searching-for-manuals:~$ /challenge/challenge --stojne 482
+Correct usage! Your flag: pwn.college{stXU4oHLNjnebwvvreR8yrqUQsy.QX2EDO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Reading manuals, man command.
+Reading the manual of man
 
 ## 6. Helpful programs
 In this level, you will practice reading a program's documentation with --help. Try it out!
@@ -101,7 +104,7 @@ In this level, you will practice reading a program's documentation with --help. 
 ### Solve
 **Flag:** `pwn.college{wwgLeZHolP26GeG4di4sgw6wVja.QX3IDO0wiMxITNxEzW}`
 
-The first comman dI had to run was the man challenge. in the synopsis it said -gqualu NUM and written below it was if num is correct print flag. Num is 227.
+read the program (inbuilt)'s --help and figured the solution.
 
 ```bash
 /challenge/challenge -h
@@ -124,15 +127,15 @@ Correct usage! Your flag: pwn.college{wwgLeZHolP26GeG4di4sgw6wVja.QX3IDO0wiMxITN
 ```
 
 ### New Learnings
-Reading manuals, man command.
+--help command
 
-## 5. Searching for Manuals
+## 7. Help for builtins
 In this challenge, we'll practice using help to look up help for builtins. This challenge's challenge command is a shell builtin, rather than a program. Like before, you need to lookup its help to figure out the secret value to pass to it!
 
 ### Solve
 **Flag:** `pwn.college{glu5IPJBcVOs3DKPFjqHFWH2DIA.QX0ETO0wiMxITNxEzW}`
 
-The first comman dI had to run was the man challenge. in the synopsis it said -gqualu NUM and written below it was if num is correct print flag. Num is 227.
+buildin porgram had the --help command then put the correct argument to generate correct flag.
 
 ```bash
 hacker@man~help-for-builtins:~$ help challenge
@@ -153,4 +156,4 @@ pwn.college{glu5IPJBcVOs3DKPFjqHFWH2DIA.QX0ETO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Reading manuals, man command.
+--help for inbuilt commands
