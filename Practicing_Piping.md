@@ -305,19 +305,33 @@ Now, you try it! This process' /challenge/pwn must be piped into /challenge/coll
 ### Solve
 **Flag:** `pwn.college{helloworld}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+Using Tee i duplicated the output then read what the challenge wanted me to do and inside flag I read what pwn stored for me, the secret code and hence i got the code so i outputted.
+
 
 ```bash
-command 1
-command 2
-pwn.college{helloworld}
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn | tee flag | /challenge/college
+Processing...
+WARNING: you are overwriting file flag with tee's output...
+The input to 'college' does not contain the correct secret code! This code 
+should be provided by the 'pwn' command. HINT: use 'tee' to intercept the 
+output of 'pwn' and figure out what the code needs to be.
+hacker@piping~duplicating-piped-data-with-tee:~$ cat flag
+Usage: /challenge/pwn --secret [SECRET_ARG]
+
+SECRET_ARG should be "sKu_kk_F"
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn --secret sKu_kk_F
+Processing...
+You must pipe the output of /challenge/pwn into /challenge/college (or 'tee' 
+for debugging).
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn --secret sKu_kk_F | /challenge/college 
+Processing...
+Correct! Passing secret value to /challenge/college...
+Great job! Here is your flag:
+pwn.college{sKu_kk_FZoHxRUfmOvjYMiCqtHJ.QXxITO0wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
-
-### References 
-Add any references or videos you used while solving the challenge.
+Tee command
 
 # 12. Processing subsititution for input 
 Recall what you learned in the diff challenge from Comprehending Commands. In that challenge, you diffed two files. Now, you'll diff two sets of command outputs: /challenge/print_decoys, which will print a bunch of decoy flags, and /challenge/print_decoys_and_flag which will print those same decoys plus the real flag.
@@ -325,7 +339,7 @@ Recall what you learned in the diff challenge from Comprehending Commands. In th
 ### Solve
 **Flag:** `pwn.college{MS2CBy2H7juOtxmWBo_d7QV_aF9.0lNwMDOxwiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+Just process subsituited both creating their own temporary piplines and then diff'd both
 
 ```bash
 hacker@piping~process-substitution-for-input:~$ diff <(/challenge/print_decoys)  <(/challenge/print_decoys_and_flag)
@@ -334,31 +348,26 @@ hacker@piping~process-substitution-for-input:~$ diff <(/challenge/print_decoys) 
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
+Subsituition
 
-### References 
-Add any references or videos you used while solving the challenge.
 
 # 13. Writing to multiple programs
 In this challenge, we have /challenge/hack, /challenge/the, and /challenge/planet. Run the /challenge/hack command, and duplicate its output as input to both the /challenge/the and the /challenge/planet commands! Scroll back through the previous challenges "Duplicating piped data with tee" and "Process substitution for input" if you need a refresher on this method.
 
 ### Solve
-**Flag:** `pwn.college{s-YeOSAhUaUFG2_FXQiomrawkdP.QXwgDN1wiMxITNxEzW}`
+**Flag:** `pwn.college{sKu_kk_FZoHxRUfmOvjYMiCqtHJ.QXxITO0wiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+Using Tee i duplicated the output then the wanted to be process subsituted and planet had to be kept normal so I did that and got the flag
 
 ```bash
-/challenge/hack | tee >( /challenge/the ) | /challenge/planet
+hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >( /challenge/the ) | /challenge/planet
 Congratulations, you have duplicated data into the input of two programs! Here 
 is your flag:
 pwn.college{s-YeOSAhUaUFG2_FXQiomrawkdP.QXwgDN1wiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
-
-### References 
-Add any references or videos you used while solving the challenge.
+Tee command
 
 # 14. Named pipes
 This challenge will be a simple introduction to FIFOs. You'll need to create a /tmp/flag_fifo file and redirect the stdout of /challenge/run to it. If you're successful, /challenge/run will write the flag into the FIFO! Go do it!
@@ -366,7 +375,7 @@ This challenge will be a simple introduction to FIFOs. You'll need to create a /
 ### Solve
 **Flag:** `pwn.college{sIRXNiF-sfC8Eje5bPXfqou-FOz.01MzMDOxwiMxITNxEzW}`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
+Just made a fifo using mkfifo and did both read write operation on it so that it is properly stored
 
 ```bash
 hacker@piping~named-pipes:~$ mkfifo /tmp/flag_fifo
@@ -384,7 +393,4 @@ pwn.college{sIRXNiF-sfC8Eje5bPXfqou-FOz.01MzMDOxwiMxITNxEzW}
 ```
 
 ### New Learnings
-Brief note on what you learned from the challenge
-
-### References 
-Add any references or videos you used while solving the challenge.
+making a fifo pipeline
