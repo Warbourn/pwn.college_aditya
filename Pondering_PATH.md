@@ -87,25 +87,27 @@ Previously, the win command that /challenge/run executed was stored in /challeng
 ### Solve
 **Flag:** `pwn.college{helloworld]`
 
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
-
+I added the path of win to the PATH variable and inside win i typed #!bin/bash to let it know it's bash coding, and then i put the location of cat which is /bin/cat /flag, the flag to ofcourse read the flag out
 ```bash
-hacker@path~adding-commands:~$ PATH=$PATH:~/bin
+hacker@path~adding-commands:~$ cd bin
 hacker@path~adding-commands:~/bin$ nano win
-inside win -
-/bin/cat
 hacker@path~adding-commands:~/bin$ /challenge/run
 Invoking 'win'....
-challenge didn't go past invoking win...
+/challenge/run: line 4: win: command not found
+It looks like that did not work... Did you set PATH correctly?
+hacker@path~adding-commands:~/bin$ PATH=/home/hacker/bin
+hacker@path~adding-commands:~/bin$ /challenge/run
+Invoking 'win'....
+pwn.college{YQ-rJ3gXPndRZ36VcIRCdFmbHeB.QX2cjM1wiMxITNxEzW}
 ```
 
 ### New Learnings
-nano command
+adding a path
 
 ### References 
 (https://www.youtube.com/watch?v=hk0RwVC6uts&t=803s)
 
-## 5. Detaching and Attaching (tmux)
+## 5. Hijacking
 For this challenge:
 
 1. Launch tmux
@@ -119,55 +121,10 @@ For this challenge:
 type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
 
 ```bash
-hacker@terminal-multiplexing~detaching-and-attaching-tmux:~$ tmux
-[detached (from session 0)]
-hacker@terminal-multiplexing~detaching-and-attaching-tmux:~$ /challenge/run
-Found detached tmux session: 0
-Sending flag to your tmux session...
-
-Flag sent! Now reattach to your tmux session with:
-  tmux attach
-
-You'll find the flag waiting for you there!
-hacker@terminal-multiplexing~detaching-and-attaching-tmux:~$ tmux -r
-tmux: unknown option -- r
-usage: tmux [-2CDlNuVv] [-c shell-command] [-f file] [-L socket-name]
-            [-S socket-path] [-T features] [command [flags]]
-hacker@terminal-multiplexing~detaching-and-attaching-tmux:~$ tmux a
-[detached (from session 0)]
-hacker@terminal-multiplexing~detaching-and-attaching-tmux:~$  echo Congratulations, here is your flag: pwn.college{UBWGBd8SaBkAoWwL_eAkl-3uu71.0VO4IDOxwiMxITNxEzW}
-Congratulations, here is your flag: pwn.college{UBWGBd8SaBkAoWwL_eAkl-3uu71.0VO4IDOxwiMxITNxEzW}
 ```
 
 ### New Learnings
-nano command
+...
 
-### References 
-Add any references or videos you used while solving the challenge.
-
-## 6. Switching Windows (tmux)
-That's it! You're now inside a screen session. It looks exactly like a terminal, but there are new capabilities there, waiting to be discovered.
-
-For this challenge, we've hooked things up so that just launching screen will get you the flag. Easy!
-
-### Solve
-**Flag:** `pwn.college{MRod1Ug3DUobySh_0JIY2bgBjXl.0VN4IDOxwiMxITNxEzW}`
-a
-type in your solve and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for any bash commands and output you type on the terminal.
-
-```bash
-hacker@terminal-multiplexing~switching-windows-tmux:~$  cat <<MSG
-> Excellent work! You found window 0!
-> Here is your flag: pwn.college{8uTzMTXWy1bauHduuz5J--e4ubD.0FM5IDOxwiMxITNxEzW}
-> MSG
-Excellent work! You found window 0!
-Here is your flag: pwn.college{8uTzMTXWy1bauHduuz5J--e4ubD.0FM5IDOxwiMxITNxEzW}
-```
-
-### New Learnings
-Brief note on what you learned from the challenge
-
-### References 
-Add any references or videos you used while solving the challenge.
 
 
